@@ -1,0 +1,264 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#10110f">
+  <meta name="description" content="Au-delà des shots — galerie de photographie in-game. Des mondes, des lumières et des instants capturés en jeu.">
+  <title>Au-delà des shots — Photographie in-game</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="grain" aria-hidden="true"></div>
+  <header class="topbar">
+    <a class="brand" href="#" aria-label="Au-delà des shots, accueil">
+      <span class="brand-name">AU-DELÀ DES SHOTS</span>
+    </a>
+    <nav class="nav" aria-label="Navigation principale">
+      <a href="#galerie">Galerie</a>
+      <a href="#apropos">À propos</a>
+      <a class="instagram" href="https://www.instagram.com/audelashots/" target="_blank" rel="noreferrer">Instagram <span>↗</span></a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">PHOTOGRAPHIE IN-GAME <span>·</span> AU-DELÀ SHOTS</p>
+        <h1>Même le virtuel<br>mérite <em>qu’on s’arrête.</em></h1>
+        <p class="hero-desc">Des images capturées en jeu, réunies par univers et par thème : décors, personnages, portraits et instants singuliers.</p>
+        <a class="hero-cta" href="#galerie">Voir les collections <span>↓</span></a>
+      </div>
+      <nav class="hero-index" id="featured-games" aria-label="Jeux à découvrir">
+        <p class="index-heading">JEUX À L’AFFICHE <span id="featured-game-count">00</span></p>
+        <div id="featured-game-links"></div>
+      </div>
+    </section>
+
+    <section class="gallery-section" id="galerie">
+      <div class="section-heading">
+        <div><p class="eyebrow">LES COLLECTIONS</p><h2>La galerie<span class="accent">.</span></h2></div>
+        <p class="section-note">Par jeu, par série, par sujet.<br>Chaque image trouve sa collection.</p>
+      </div>
+
+      <div class="game-browser">
+        <div class="game-browser-heading">
+          <div>
+            <p class="eyebrow">EXPLORER PAR JEU</p>
+            <h3 id="selected-game-title">Choisir un jeu</h3>
+            <p id="selected-game-summary" class="section-note"></p>
+          </div>
+          <button class="all-games-toggle" id="all-games-toggle" type="button" hidden>Voir tous les jeux</button>
+        </div>
+        <div class="game-options" id="game-options" role="group" aria-label="Choisir une galerie par jeu"></div>
+      </div>
+
+      <dialog class="game-dialog" id="all-games-dialog" aria-labelledby="all-games-title">
+        <div class="game-dialog-heading">
+          <div><p class="eyebrow">BIBLIOTHÈQUE</p><h3 id="all-games-title">Tous les jeux</h3></div>
+          <button class="dialog-close" id="close-game-dialog" type="button" aria-label="Fermer">×</button>
+        </div>
+        <label class="game-search"><span>Rechercher un jeu</span><input id="game-search" type="search" autocomplete="off" placeholder="Nom du jeu"></label>
+        <div class="game-dialog-options" id="all-game-options" role="group" aria-label="Tous les jeux disponibles"></div>
+        <p class="no-game-results" id="no-game-results" hidden>Aucun jeu ne correspond à cette recherche.</p>
+      </dialog>
+
+      <div class="collection-list" id="collection-list">
+        <section class="collection" id="ville-enfouie" data-game="arc-raiders" data-game-name="ARC RAIDERS" data-collection="ville-enfouie" data-featured="true">
+          <div class="collection-title">
+            <div><p class="collection-kicker">ARC RAIDERS <span> / 01</span></p><h3>Ville Enfouie</h3></div>
+            <div class="collection-tools">
+              <span class="photo-count">03 CAPTURES</span>
+              <div class="carousel-controls" aria-label="Parcourir les photos de Ville Enfouie">
+                <button class="carousel-control" type="button" data-direction="-1" aria-label="Photos précédentes" disabled>←</button>
+                <button class="carousel-control" type="button" data-direction="1" aria-label="Photos suivantes">→</button>
+              </div>
+            </div>
+          </div>
+          <div class="photo-grid">
+            <button class="photo-card wide" data-src="assets/photos/arc-raiders/ville-enfouie/ARC Raiders_20261019124627.jpg" data-title="Ville Enfouie — 01" data-game="ARC RAIDERS" data-series="Ville Enfouie">
+              <div class="photo-visual scene scene-city"><span class="scene-label">CAPTURE À AJOUTER · 01</span><span class="corner-mark" aria-hidden="true">↗</span></div>
+              <span class="photo-caption"><span>Ville Enfouie — 01</span><span>↗</span></span>
+            </button>
+            <button class="photo-card" data-src="assets/photos/arc-raiders/ville-enfouie/ARC Raiders_20261019124833.jpg" data-title="Ville Enfouie — 02" data-game="ARC RAIDERS" data-series="Ville Enfouie">
+              <div class="photo-visual scene scene-dusk"><span class="scene-label">CAPTURE À AJOUTER · 02</span><span class="corner-mark" aria-hidden="true">↗</span></div>
+              <span class="photo-caption"><span>Ville Enfouie — 02</span><span>↗</span></span>
+            </button>
+            <button class="photo-card wide" data-src="assets/photos/arc-raiders/ville-enfouie/ARC Raiders_20261019124912.jpg" data-title="Ville Enfouie — 03" data-game="ARC RAIDERS" data-series="Ville Enfouie">
+              <div class="photo-visual scene scene-city"><span class="scene-label">CAPTURE À AJOUTER · 03</span><span class="corner-mark" aria-hidden="true">↗</span></div>
+              <span class="photo-caption"><span>Ville Enfouie — 03</span><span>↗</span></span>
+            </button>
+            <button class="photo-card" data-src="assets/photos/arc-raiders/ville-enfouie/ARC Raiders_20261019124921.jpg" data-title="Ville Enfouie — 04" data-game="ARC RAIDERS" data-series="Ville Enfouie">
+              <div class="photo-visual scene scene-city"><span class="scene-label">CAPTURE À AJOUTER · 04</span><span class="corner-mark" aria-hidden="true">↗</span></div>
+              <span class="photo-caption"><span>Ville Enfouie — 04</span><span>↗</span></span>
+            </button>
+            <button class="photo-card wide" data-src="assets/photos/arc-raiders/ville-enfouie/ARC Raiders_20261019124930.jpg" data-title="Ville Enfouie — 05" data-game="ARC RAIDERS" data-series="Ville Enfouie">
+              <div class="photo-visual scene scene-city"><span class="scene-label">CAPTURE À AJOUTER · 05</span><span class="corner-mark" aria-hidden="true">↗</span></div>
+              <span class="photo-caption"><span>Ville Enfouie — 05</span><span>↗</span></span>
+            </button>
+            <button class="photo-card" data-src="assets/photos/arc-raiders/ville-enfouie/ARC Raiders_20261019125055.jpg" data-title="Ville Enfouie — 06" data-game="ARC RAIDERS" data-series="Ville Enfouie">
+              <div class="photo-visual scene scene-city"><span class="scene-label">CAPTURE À AJOUTER · 06</span><span class="corner-mark" aria-hidden="true">↗</span></div>
+              <span class="photo-caption"><span>Ville Enfouie — 06</span><span>↗</span></span>
+            </button>
+            <button class="photo-card wide" data-src="assets/photos/arc-raiders/ville-enfouie/ARC Raiders_20261019125248.jpg" data-title="Ville Enfouie — 07" data-game="ARC RAIDERS" data-series="Ville Enfouie">
+              <div class="photo-visual scene scene-city"><span class="scene-label">CAPTURE À AJOUTER · 07</span><span class="corner-mark" aria-hidden="true">↗</span></div>
+              <span class="photo-caption"><span>Ville Enfouie — 07</span><span>↗</span></span>
+            </button>
+            <button class="photo-card" data-src="assets/photos/arc-raiders/ville-enfouie/ARC Raiders_20261019125306.jpg" data-title="Ville Enfouie — 08" data-game="ARC RAIDERS" data-series="Ville Enfouie">
+              <div class="photo-visual scene scene-city"><span class="scene-label">CAPTURE À AJOUTER · 08</span><span class="corner-mark" aria-hidden="true">↗</span></div>
+              <span class="photo-caption"><span>Ville Enfouie — 08</span><span>↗</span></span>
+            </button>
+            <button class="photo-card wide" data-src="assets/photos/arc-raiders/ville-enfouie/ARC Raiders_20261019125343.jpg" data-title="Ville Enfouie — 09" data-game="ARC RAIDERS" data-series="Ville Enfouie">
+              <div class="photo-visual scene scene-city"><span class="scene-label">CAPTURE À AJOUTER · 09</span><span class="corner-mark" aria-hidden="true">↗</span></div>
+              <span class="photo-caption"><span>Ville Enfouie — 09</span><span>↗</span></span>
+            </button>
+            <button class="photo-card" data-src="assets/photos/arc-raiders/ville-enfouie/ARC Raiders_20261019125411.jpg" data-title="Ville Enfouie — 10" data-game="ARC RAIDERS" data-series="Ville Enfouie">
+              <div class="photo-visual scene scene-city"><span class="scene-label">CAPTURE À AJOUTER · 10</span><span class="corner-mark" aria-hidden="true">↗</span></div>
+              <span class="photo-caption"><span>Ville Enfouie — 10</span><span>↗</span></span>
+            </button>
+          </div>
+        </section>
+
+        <section class="collection" id="stella-montis" data-game="arc-raiders" data-game-name="ARC RAIDERS" data-collection="stella-montis">
+          <div class="collection-title">
+            <div><p class="collection-kicker">ARC RAIDERS <span> / 02</span></p><h3>Stella Montis</h3></div>
+            <div class="collection-tools">
+              <span class="photo-count">07 CAPTURES</span>
+              <div class="carousel-controls" aria-label="Parcourir les photos de Stella Montis">
+                <button class="carousel-control" type="button" data-direction="-1" aria-label="Photos précédentes" disabled>←</button>
+                <button class="carousel-control" type="button" data-direction="1" aria-label="Photos suivantes">→</button>
+              </div>
+            </div>
+          </div>
+          <div class="photo-grid">
+            <button class="photo-card" data-src="assets/photos/arc-raiders/stella-montis/ARC Raiders_20261019130131.jpg" data-title="Stella Montis — 01" data-game="ARC RAIDERS" data-series="Stella Montis">
+              <div class="photo-visual scene scene-mountain"><span class="scene-label">CAPTURE À AJOUTER · 01</span><span class="corner-mark" aria-hidden="true">↗</span></div>
+              <span class="photo-caption"><span>Stella Montis — 01</span><span>↗</span></span>
+            </button>
+            <button class="photo-card wide" data-src="assets/photos/arc-raiders/stella-montis/ARC Raiders_20261019130144.jpg" data-title="Stella Montis — 02" data-game="ARC RAIDERS" data-series="Stella Montis">
+              <div class="photo-visual scene scene-blue"><span class="scene-label">CAPTURE À AJOUTER · 02</span><span class="corner-mark" aria-hidden="true">↗</span></div>
+              <span class="photo-caption"><span>Stella Montis — 02</span><span>↗</span></span>
+            </button>
+            <button class="photo-card wide" data-src="assets/photos/arc-raiders/stella-montis/ARC Raiders_20261019130218.jpg" data-title="Stella Montis — 03" data-game="ARC RAIDERS" data-series="Stella Montis">
+              <div class="photo-visual scene scene-mountain"><span class="scene-label">CAPTURE À AJOUTER · 03</span><span class="corner-mark" aria-hidden="true">↗</span></div>
+              <span class="photo-caption"><span>Stella Montis — 03</span><span>↗</span></span>
+            </button>
+            <button class="photo-card" data-src="assets/photos/arc-raiders/stella-montis/ARC Raiders_20261019130601.jpg" data-title="Stella Montis — 04" data-game="ARC RAIDERS" data-series="Stella Montis">
+              <div class="photo-visual scene scene-blue"><span class="scene-label">CAPTURE À AJOUTER · 04</span><span class="corner-mark" aria-hidden="true">↗</span></div>
+              <span class="photo-caption"><span>Stella Montis — 04</span><span>↗</span></span>
+            </button>
+            <button class="photo-card wide" data-src="assets/photos/arc-raiders/stella-montis/ARC Raiders_20261019130731.jpg" data-title="Stella Montis — 05" data-game="ARC RAIDERS" data-series="Stella Montis">
+              <div class="photo-visual scene scene-mountain"><span class="scene-label">CAPTURE À AJOUTER · 05</span><span class="corner-mark" aria-hidden="true">↗</span></div>
+              <span class="photo-caption"><span>Stella Montis — 05</span><span>↗</span></span>
+            </button>
+            <button class="photo-card" data-src="assets/photos/arc-raiders/stella-montis/ARC Raiders_20261019130805.jpg" data-title="Stella Montis — 06" data-game="ARC RAIDERS" data-series="Stella Montis">
+              <div class="photo-visual scene scene-blue"><span class="scene-label">CAPTURE À AJOUTER · 06</span><span class="corner-mark" aria-hidden="true">↗</span></div>
+              <span class="photo-caption"><span>Stella Montis — 06</span><span>↗</span></span>
+            </button>
+            <button class="photo-card wide" data-src="assets/photos/arc-raiders/stella-montis/ARC Raiders_20261019130823.jpg" data-title="Stella Montis — 07" data-game="ARC RAIDERS" data-series="Stella Montis">
+              <div class="photo-visual scene scene-mountain"><span class="scene-label">CAPTURE À AJOUTER · 07</span><span class="corner-mark" aria-hidden="true">↗</span></div>
+              <span class="photo-caption"><span>Stella Montis — 07</span><span>↗</span></span>
+            </button>
+          </div>
+        </section>
+
+        <section class="collection" id="black-flag-resynced" data-game="ac-black-flag-resynced" data-game-name="ASSASSIN'S CREED BLACK FLAG RESYNCED" data-collection="caraibes" data-featured="true">
+          <div class="collection-title">
+            <div><p class="collection-kicker">ASSASSIN'S CREED BLACK FLAG RESYNCED <span> / CARAÏBES</span></p><h3>Les Caraïbes</h3></div>
+            <div class="collection-tools">
+              <span class="photo-count">15 CAPTURES</span>
+              <div class="carousel-controls" aria-label="Parcourir les photos d’Assassin’s Creed Black Flag Resynced">
+                <button class="carousel-control" type="button" data-direction="-1" aria-label="Photos précédentes" disabled>←</button>
+                <button class="carousel-control" type="button" data-direction="1" aria-label="Photos suivantes">→</button>
+              </div>
+            </div>
+          </div>
+          <div class="photo-grid">
+            <button class="photo-card wide" data-src="assets/photos/ac-black-flag-resync/Chinchorro_.jpg" data-title="Chinchorro — 01" data-game="ASSASSIN'S CREED BLACK FLAG RESYNCED" data-series="Chinchorro">
+              <div class="photo-visual scene scene-city"><span class="scene-label">CAPTURE À AJOUTER · 01</span><span class="corner-mark" aria-hidden="true">↗</span></div>
+              <span class="photo-caption"><span>Chinchorro — 01</span><span>↗</span></span>
+            </button>
+            <button class="photo-card" data-src="assets/photos/ac-black-flag-resync/Chinchorro__1.jpg" data-title="Chinchorro — 02" data-game="ASSASSIN'S CREED BLACK FLAG RESYNCED" data-series="Chinchorro">
+              <div class="photo-visual scene scene-dusk"><span class="scene-label">CAPTURE À AJOUTER · 02</span><span class="corner-mark" aria-hidden="true">↗</span></div>
+              <span class="photo-caption"><span>Chinchorro — 02</span><span>↗</span></span>
+            </button>
+            <button class="photo-card wide" data-src="assets/photos/ac-black-flag-resync/Chinchorro__2.jpg" data-title="Chinchorro — 03" data-game="ASSASSIN'S CREED BLACK FLAG RESYNCED" data-series="Chinchorro">
+              <div class="photo-visual scene scene-city"><span class="scene-label">CAPTURE À AJOUTER · 03</span><span class="corner-mark" aria-hidden="true">↗</span></div>
+              <span class="photo-caption"><span>Chinchorro — 03</span><span>↗</span></span>
+            </button>
+            <button class="photo-card" data-src="assets/photos/ac-black-flag-resync/Eleuthera__1.jpg" data-title="Eleuthera — 01" data-game="ASSASSIN'S CREED BLACK FLAG RESYNCED" data-series="Eleuthera">
+              <div class="photo-visual scene scene-mountain"><span class="scene-label">CAPTURE À AJOUTER · 04</span><span class="corner-mark" aria-hidden="true">↗</span></div>
+              <span class="photo-caption"><span>Eleuthera — 01</span><span>↗</span></span>
+            </button>
+            <button class="photo-card wide" data-src="assets/photos/ac-black-flag-resync/Eleuthera__2.jpg" data-title="Eleuthera — 02" data-game="ASSASSIN'S CREED BLACK FLAG RESYNCED" data-series="Eleuthera">
+              <div class="photo-visual scene scene-blue"><span class="scene-label">CAPTURE À AJOUTER · 05</span><span class="corner-mark" aria-hidden="true">↗</span></div>
+              <span class="photo-caption"><span>Eleuthera — 02</span><span>↗</span></span>
+            </button>
+            <button class="photo-card" data-src="assets/photos/ac-black-flag-resync/Gibara_.jpg" data-title="Gibara — 01" data-game="ASSASSIN'S CREED BLACK FLAG RESYNCED" data-series="Gibara">
+              <div class="photo-visual scene scene-forest"><span class="scene-label">CAPTURE À AJOUTER · 06</span><span class="corner-mark" aria-hidden="true">↗</span></div>
+              <span class="photo-caption"><span>Gibara — 01</span><span>↗</span></span>
+            </button>
+            <button class="photo-card wide" data-src="assets/photos/ac-black-flag-resync/Gibara__1.jpg" data-title="Gibara — 02" data-game="ASSASSIN'S CREED BLACK FLAG RESYNCED" data-series="Gibara">
+              <div class="photo-visual scene scene-city"><span class="scene-label">CAPTURE À AJOUTER · 07</span><span class="corner-mark" aria-hidden="true">↗</span></div>
+              <span class="photo-caption"><span>Gibara — 02</span><span>↗</span></span>
+            </button>
+            <button class="photo-card" data-src="assets/photos/ac-black-flag-resync/Gibara__2.jpg" data-title="Gibara — 03" data-game="ASSASSIN'S CREED BLACK FLAG RESYNCED" data-series="Gibara">
+              <div class="photo-visual scene scene-dusk"><span class="scene-label">CAPTURE À AJOUTER · 08</span><span class="corner-mark" aria-hidden="true">↗</span></div>
+              <span class="photo-caption"><span>Gibara — 03</span><span>↗</span></span>
+            </button>
+            <button class="photo-card wide" data-src="assets/photos/ac-black-flag-resync/Gibara__3.jpg" data-title="Gibara — 04" data-game="ASSASSIN'S CREED BLACK FLAG RESYNCED" data-series="Gibara">
+              <div class="photo-visual scene scene-orange"><span class="scene-label">CAPTURE À AJOUTER · 09</span><span class="corner-mark" aria-hidden="true">↗</span></div>
+              <span class="photo-caption"><span>Gibara — 04</span><span>↗</span></span>
+            </button>
+            <button class="photo-card" data-src="assets/photos/ac-black-flag-resync/Gibara__6.jpg" data-title="Gibara — 05" data-game="ASSASSIN'S CREED BLACK FLAG RESYNCED" data-series="Gibara">
+              <div class="photo-visual scene scene-forest"><span class="scene-label">CAPTURE À AJOUTER · 10</span><span class="corner-mark" aria-hidden="true">↗</span></div>
+              <span class="photo-caption"><span>Gibara — 05</span><span>↗</span></span>
+            </button>
+            <button class="photo-card wide" data-src="assets/photos/ac-black-flag-resync/Gibara__9.jpg" data-title="Gibara — 06" data-game="ASSASSIN'S CREED BLACK FLAG RESYNCED" data-series="Gibara">
+              <div class="photo-visual scene scene-blue"><span class="scene-label">CAPTURE À AJOUTER · 11</span><span class="corner-mark" aria-hidden="true">↗</span></div>
+              <span class="photo-caption"><span>Gibara — 06</span><span>↗</span></span>
+            </button>
+            <button class="photo-card" data-src="assets/photos/ac-black-flag-resync/Gibara__10.jpg" data-title="Gibara — 07" data-game="ASSASSIN'S CREED BLACK FLAG RESYNCED" data-series="Gibara">
+              <div class="photo-visual scene scene-city"><span class="scene-label">CAPTURE À AJOUTER · 12</span><span class="corner-mark" aria-hidden="true">↗</span></div>
+              <span class="photo-caption"><span>Gibara — 07</span><span>↗</span></span>
+            </button>
+            <button class="photo-card wide" data-src="assets/photos/ac-black-flag-resync/Gibara__14.jpg" data-title="Gibara — 08" data-game="ASSASSIN'S CREED BLACK FLAG RESYNCED" data-series="Gibara">
+              <div class="photo-visual scene scene-dusk"><span class="scene-label">CAPTURE À AJOUTER · 13</span><span class="corner-mark" aria-hidden="true">↗</span></div>
+              <span class="photo-caption"><span>Gibara — 08</span><span>↗</span></span>
+            </button>
+            <button class="photo-card" data-src="assets/photos/ac-black-flag-resync/Serranilla_.jpg" data-title="Serranilla — 01" data-game="ASSASSIN'S CREED BLACK FLAG RESYNCED" data-series="Serranilla">
+              <div class="photo-visual scene scene-mountain"><span class="scene-label">CAPTURE À AJOUTER · 14</span><span class="corner-mark" aria-hidden="true">↗</span></div>
+              <span class="photo-caption"><span>Serranilla — 01</span><span>↗</span></span>
+            </button>
+            <button class="photo-card wide" data-src="assets/photos/ac-black-flag-resync/Temple%20maya_.jpg" data-title="Temple maya — 01" data-game="ASSASSIN'S CREED BLACK FLAG RESYNCED" data-series="Temple maya">
+              <div class="photo-visual scene scene-forest"><span class="scene-label">CAPTURE À AJOUTER · 15</span><span class="corner-mark" aria-hidden="true">↗</span></div>
+              <span class="photo-caption"><span>Temple maya — 01</span><span>↗</span></span>
+            </button>
+          </div>
+        </section>
+      </div>
+      <p class="empty-state" id="empty-state" hidden>Aucune collection n’est encore disponible pour ce jeu.</p>
+    </section>
+
+    <section class="about" id="apropos">
+      <div class="about-index">À PROPOS <span>— 001</span></div>
+      <div class="about-copy"><h2>Pas juste une<br>capture d’écran.</h2><p>Au-delà des shots, c’est un regard sur les mondes virtuels. Des décors, des silhouettes, des lumières et des détails qu’on prend rarement le temps de voir.</p><a href="https://www.instagram.com/audelashots/" target="_blank" rel="noreferrer">Suivre @audelashots <span>↗</span></a></div>
+      <div class="about-stamp">IN-GAME<br>PHOTOGRAPHY<br><span>EST. 2025</span></div>
+    </section>
+  </main>
+
+  <footer class="footer"><a class="brand" href="#"><span class="brand-name">AU-DELÀ DES SHOTS</span></a><span>CAPTURÉ EN JEU · PARTAGÉ AVEC PASSION</span><span>© <span id="year"></span> AU-DELÀ DES SHOTS</span></footer>
+
+  <div class="lightbox" id="lightbox" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Photo en grand">
+    <button class="lightbox-close" id="close-lightbox" aria-label="Fermer">×</button>
+    <button class="lightbox-arrow prev" id="prev-photo" aria-label="Photo précédente">←</button>
+    <div class="lightbox-content">
+      <div class="lightbox-image-wrap"><div class="lightbox-photo-frame"><img id="lightbox-image" alt=""></div><div class="image-fallback" id="image-fallback" hidden>Ajoutez votre image dans le dossier indiqué pour l’afficher ici.</div></div>
+      <div class="lightbox-info"><div><p id="lightbox-meta">ARC RAIDERS / VILLE ENFOUIE</p><h3 id="lightbox-title">Ville Enfouie — 01</h3></div><a id="download-photo" class="download-btn" href="#" download>Télécharger <span>↓</span></a></div>
+    </div>
+    <button class="lightbox-arrow next" id="next-photo" aria-label="Photo suivante">→</button>
+    <p class="lightbox-counter" id="lightbox-counter">01 / 06</p>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
