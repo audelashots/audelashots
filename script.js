@@ -131,6 +131,7 @@ function selectGame(gameKey) {
   const game = gameMap.get(gameKey);
   collections.forEach(section => {
     section.hidden = section.dataset.game !== gameKey;
+    if (!section.hidden) updateCarouselControls(section);
   });
   visibleCards = cards.filter(card => card.closest('.collection').dataset.game === gameKey);
   document.getElementById('empty-state').hidden = visibleCards.length !== 0;
