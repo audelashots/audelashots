@@ -29,19 +29,16 @@ collections.forEach(collection => {
     gameMap.set(gameKey, {
       key: gameKey,
       name: collection.dataset.gameName,
-      featured: false,
       collections: [],
       photoCount: 0
     });
   }
   const game = gameMap.get(gameKey);
-  game.featured ||= collection.dataset.featured === 'true';
   game.collections.push(collection);
   game.photoCount += photoCount;
 });
-const games = [...gameMap.values()];
-const featuredGames = games.filter(game => game.featured).slice(0, 4);
-const initialGames = featuredGames.length ? featuredGames : games.slice(0, 3);
+const games = [...gameMap.values()].reverse();
+const initialGames = games.slice(0, 3);
 const gameOptions = document.getElementById('game-options');
 const gameToggle = document.getElementById('all-games-toggle');
 const gameDialog = document.getElementById('all-games-dialog');
@@ -51,6 +48,8 @@ const noGameResults = document.getElementById('no-game-results');
 const gameTitle = document.getElementById('selected-game-title');
 const gameSummary = document.getElementById('selected-game-summary');
 const featuredLinks = document.getElementById('featured-game-links');
+const seriesBrowser = document.getElementById('series-browser');
+const seriesSelect = document.getElementById('series-select');
 let selectedGame = null;
 
 function createGameButton(game, index, className) {
@@ -122,19 +121,40 @@ const title = document.getElementById('lightbox-title');
 const meta = document.getElementById('lightbox-meta');
 const counter = document.getElementById('lightbox-counter');
 const download = document.getElementById('download-photo');
+const lightboxImageWrap = document.querySelector('.lightbox-image-wrap');
 let current = 0;
 let visibleCards = cards;
 let lastFocusedCard = null;
+let swipeStart = null;
+
+lightboxImageWrap.addEventListener('pointerdown', event => {
+  if (event.pointerType !== 'touch' && event.pointerType !== 'pen') return;
+  swipeStart = { x: event.clientX, y: event.clientY };
+});
+lightboxImageWrap.addEventListener('pointerup', event => {
+  if (!swipeStart) return;
+  const deltaX = event.clientX - swipeStart.x;
+  const deltaY = event.clientY - swipeStart.y;
+  swipeStart = null;
+  if (Math.abs(deltaX) < 48 || Math.abs(deltaX) < Math.abs(deltaY) * 1.2) return;
+  showPhoto(current + (deltaX < 0 ? 1 : -1));
+});
+lightboxImageWrap.addEventListener('pointercancel', () => { swipeStart = null; });
 
 function selectGame(gameKey) {
   selectedGame = gameKey;
   const game = gameMap.get(gameKey);
-  collections.forEach(section => {
-    section.hidden = section.dataset.game !== gameKey;
-    if (!section.hidden) updateCarouselControls(section);
+  seriesSelect.replaceChildren();
+  if (game.collections.length > 1) {
+    seriesSelect.add(new Option('Toutes les séries', ''));
+  }
+  game.collections.forEach(collection => {
+    const seriesName = collection.querySelector('.collection-title h3').textContent.trim();
+    seriesSelect.add(new Option(seriesName, collection.dataset.collection));
   });
-  visibleCards = cards.filter(card => card.closest('.collection').dataset.game === gameKey);
-  document.getElementById('empty-state').hidden = visibleCards.length !== 0;
+  seriesSelect.value = game.collections.length === 1 ? game.collections[0].dataset.collection : '';
+  seriesBrowser.hidden = game.collections.length === 0;
+  updateVisibleCollection();
   gameTitle.textContent = game.name;
   gameSummary.textContent = `${game.collections.length} ${game.collections.length === 1 ? 'série' : 'séries'} · ${game.photoCount} photos`;
   document.querySelectorAll('[data-game-choice]').forEach(button => {
@@ -142,6 +162,23 @@ function selectGame(gameKey) {
   });
   if (gameDialog.open) gameDialog.close();
 }
+
+function updateVisibleCollection() {
+  const seriesKey = seriesSelect.value;
+  collections.forEach(section => {
+    section.hidden = section.dataset.game !== selectedGame ||
+      (seriesKey !== '' && section.dataset.collection !== seriesKey);
+    if (!section.hidden) updateCarouselControls(section);
+  });
+  visibleCards = cards.filter(card => !card.closest('.collection').hidden);
+  const emptyState = document.getElementById('empty-state');
+  emptyState.textContent = seriesKey
+    ? 'Aucune photo n’est encore disponible pour cette série.'
+    : 'Aucune photo n’est encore disponible pour ce jeu.';
+  emptyState.hidden = visibleCards.length !== 0;
+}
+
+seriesSelect.addEventListener('change', updateVisibleCollection);
 
 function updateCarouselControls(collection) {
   const gallery = collection.querySelector('.photo-grid');
